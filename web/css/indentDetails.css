@@ -1,0 +1,56 @@
+.myIndent{
+    width: 100%;
+    border: 1px solid #cccccc;
+}
+.myIndent-top{
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    background-color: #f6f6f6;
+    position: relative;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.myIndent-top-left{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+}
+.myIndent-top-right{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+.myIndent-center{
+    margin-top: 10px;
+    height: 105px;
+    width: 838px;
+    border-bottom: 1px solid #cccccc;
+    margin-left: 20px;
+}
+.myIndent-center table tr td{
+    width: 360px;
+    height: 30px;
+    font-size: 12px;
+}
+.myIndent-center table{
+    width: 100%;
+}
+.myIndent-center table tr td .price{
+    color: #ed6d00;
+    font-weight: 700;
+}
+.myIndent-bottom{
+    width: 838px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.myIndent-bottom table tr td{
+    width: 260px;
+    height: 30px;
+    font-size: 12px;
+}
+.myIndent-bottom .address{
+    margin-bottom: 20px;
+}

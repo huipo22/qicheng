@@ -1,0 +1,77 @@
+.productLine .productLine-top{
+    width: 130px;
+    height: 25px;
+    margin: 20px 0px;
+}
+.productLine .productLine-top span{
+    font-size: 16px;
+    margin-left: 5px;
+    color: #ed6d00;
+}
+
+.productLine .listing{
+    width: 1030px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.productLine .listing .item{
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 5px;
+}
+.productLine .uperdiv{
+    margin-top: 20px;
+
+}
+.productLine .upgrade-box{
+
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.productLine .upgrade-box .upgrade{
+    background-color: #f5f5f5;
+    padding-top: 10px;
+}
+.productLine .upgrade-box .upgrade~.upgrade{
+    border-top: 1px dashed #cccccc;
+    padding-top: 5px;
+}
+.productLine div .p-top{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.productLine  .base-box .pull-left{
+    margin: 10px 10px 15px 0px;
+}
+.productLine  .upgrade-box .pull-left{
+    margin: 10px 10px 15px 20px;
+}
+.productLine  div .pull-left img{
+    width: 135px;
+    height: 108px;
+}
+.productLine div .pull-right{
+    margin: 10px 20px 0px 10px;
+    width: 835px;
+}
+.productLine div p{
+    line-height: 25px;
+}
+.productLine div .p1 span{
+    display: inline-block;
+    *display:inline; *zoom:1;
+    width: 205px;
+}
+.productLine .upgrade-box~div{
+    margin-top: 10px;
+}
+.productLine .base-box{
+    width: 100%;
+}
+.productLine .base .left img{
+    width: 141px;
+    height: 114px;
+}
+.productLine .base .right{
+    /*width: 855px;*/
+    margin-right: 20px;
+}

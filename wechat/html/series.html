@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <title>产品系列</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta name="Description" content="产品系列"/>
+    <meta name="Keywords" content="产品系列"/>
+    <meta name="author" content="zhanglin"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon"/>
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <link rel="stylesheet" href="../css/series.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../js/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/frozen.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+</head>
+
+<body>
+<div class="ui-form-item" style="background:#f5f5f5;">
+    <label style="width:20px;">
+        <img id="type_select" src="../img/series/liebiao.png" width="20">
+    </label>
+    <input type="hidden" id="series_id" />
+    <div style="text-align:center;" id="series_name"></div>
+</div>
+<!-- 产品系列 -->
+<ul id="series" class="type_select" style="display:none;position:absolute;width:100%;z-index: 1000001;"></ul>
+<!-- 场景 -->
+<div class="ui-scroller-scene">
+    <ul id="sceneList" class="ui-whitespace ui-white-list"></ul>
+</div>
+<div class="mask"></div>
+<!-- 场景图片 -->
+<div style="position: relative;" id="senceShare">
+    <div id="sceneImg" class="main_picture"></div>
+    <div class="share">
+        <span class="-mob-share-ui-button -mob-share-open">
+                    <img src="../img/series/share.png" alt="" style="width:30px;margin:1rem .5rem;"/>
+                </span>
+        <div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-bottom" style="display: none">
+            <div style="margin-top: 25px">分享到</div>
+            <ul class="-mob-share-list">
+                <li class="-mob-share-qzone"><p>空间</p></li>
+                <li class="-mob-share-weixin"><p>微信</p></li>
+                <li class="-mob-share-weibo"><p>微博</p></li>
+            </ul>
+        </div>
+        <div class="-mob-share-ui-bg"></div>
+    </div>
+ </div>
+<div class="bg" style="border-bottom:none;">
+    <img src="../img/series/GN.png" alt=""/>
+    <a>升级包</a>
+</div>
+<div style="background-color:#f5f5f5;">
+    <div class="ui-scroller">
+        <ul id="upgradeInfo" class="ui-tab-scoller a"></ul>
+    </div>
+    <div class="ui-scroller-img">
+        <ul id="upgradeImgList"></ul>
+    </div>
+</div>
+<div class="area">
+    <p>面积：</p>
+    <input id="area" type="text" placeholder="请输入您的住房面积"/>
+    <b>m<sup>2</sup></b>
+</div>
+<div class="money">
+    <p class="color">单价：<label id="seriesPrice"></label>元/m<sup>2</sup></p><br>
+    <p class="color">参考价：</p><b id="totalPrice">￥0.00</b>
+</div>
+<div class="logo">
+    <img src="../img/series/logo3@2x.png" alt=""/>
+    <p>项目清单</p>
+</div>
+<div class="login" style="display: none">
+    <img src="../img/series/weidenglu@2x.png" alt=""/><br>
+    <p class="p1">您还未登录，请先<a href="javascript:;">登录</a></p>
+</div>
+<div id="login_items" style="margin-bottom:4rem;margin-top: 1rem;">
+    <!-- 清单列表 -->
+    <ul id="itemsList"></ul>
+    <div class="ui-btn-wrap" style="padding:15px 0;">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg" id="submit_order" style="border-radius:0; height:55px">提交订单</button>
+    </div>
+</div>
+<footer class="ui-footer">
+    <ul class="ui-tiled ui-ul">
+        <li onclick="RedirectUrl('index.html');">
+            <img src="../img/nav/home2.png"/>
+            <div>首页</div>
+        </li>
+        <li class="active">
+            <img src="../img/nav/chanpin1.png"/>
+            <div>产品系列</div>
+        </li>
+        <li onclick="RedirectUrl('brand.html');">
+            <img src="../img/nav/hezuo2.png"/>
+            <div>合作品牌</div>
+        </li>
+        <li onclick="RedirectUrl('my.html');">
+            <img src="../img/nav/wode2.png"/>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+<div class="ui-loading-block">
+    <div class="ui-loading-cnt">
+        <i class="ui-loading-bright"></i>
+        <p>正在加载中...</p>
+    </div>
+</div>
+<div class="ui-poptips ui-poptips-warn" style="display:none;">
+    <div class="ui-poptips-cnt"></div>
+</div>
+</body>
+</html>
+<!-- 产品系列模板 -->
+<script type="text/x-jsrender" id="seriesTmpl">
+    {{if #index == 0}}
+        <li class="check_sty">{{:seriesName}}</li>
+    {{else}}
+        <li>{{:seriesName}}</li>
+    {{/if}}
+</script>
+<!-- 场景模板 -->
+<script type="text/x-jsrender" id="sceneListTmpl">
+    <li>
+        <div class="test-img">
+            <img src="../img/series/{{if typeName == '餐厅'}}canting{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '客厅'}}keting{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '玄关'}}xuanguan{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '卧室'}}woshi{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '卫生间'}}weishengjian{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '书房'}}shufang{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{else typeName == '厨房'}}chufang{{if #getIndex() == 0}}1{{else}}2{{/if}}.png{{/if}}">
+        </div>
+        <p>{{:sceneName}}</p>
+    </li>
+</script>
+<!-- 场景图片模板 -->
+<script type="text/x-jsrender" id="sceneImgTmpl">
+    <div><img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" alt="" class="img-responsive"/></div>
+<div class="main_picture1"></div>
+<div class="main_picture_word">
+    <p style="float:left">产品系列：{{:seriesName}}</p>
+    <div style="float:right">
+        <a href="javascript:;" style="color:#fff;">
+            <img src="../img/series/history{{if isHistory==1}}2{{/if}}.png" id="history_btn" alt="" style="width:30px;margin:3px 1rem 0 .5rem;"/>
+        </a>
+    </div>
+</div>
+</script>
+<!-- 升级包信息模板（升级包名称） -->
+<script type="text/x-jsrender" id="upgradeInfoTmpl">
+    <li {{if #index == 0}}class="active"{{/if}} data-id="{{:id}}">
+        <a href="javascript:;" {{if #index == 0}}class="oringe"{{/if}}>{{:upgradeName}}</a>
+    </li>
+</script>
+<!-- 升级包图片信息集合 -->
+<script type="text/x-jsrender" id="upgradeImgListTmpl">
+    <li class="show">
+        <div class="{{if #index % 2 != 0}}two_div{{else}}two_div{{/if}}">
+            <img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" data-show="{{if imgurlEffect}}{{getImagePath:imgurlEffect}}{{/if}}" data-price="{{:price}}" class="img-responsive img" data-gradeid="{{:upgradeId}}" alt=""/>
+            <div class="shado"></div>
+            <div class="shado_word">
+                <i class="i2" data-img="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" data-name="{{:itemName}}" data-brand="{{:brand}}" data-type="{{:modelType}}" data-price="{{:price}}" data-id="{{:id}}" data-gradeid="{{:upgradeId}}" data-senceid="{{:sceneId}}" data-desc="{{:itemDesc}}"></i>
+                <p>{{:itemName}}</p>
+            </div>
+        </div>
+    </li>
+</script>
+<!-- 清单列表模板 -->
+<script type="text/x-jsrender" id="itemsListTmpl">
+    <li {{if materialItemsList && materialItemsList.length <= 0}}style="display: none;margin-bottom: 1rem;"{{/if}}>
+        <div class="title">
+            <b></b><p>{{:sceneName}}</p>
+        </div>
+        <ul id="upgradeItemsList{{:id}}"></ul>
+        <ul id="maItemsList{{:id}}">
+            {{for materialItemsList}}
+                <li>
+                    <div class="yiban">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" alt="" style="width: 14rem;height: 11rem;" />
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <ul class="list-unstyled">
+                                    <li>名称：{{:itemName}}</li>
+                                    <li>品牌：{{:brand}}</li>
+                                    <li>型号：{{:modelType}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>描述：{{:itemDesc}}</p>
+                    </div>
+                </li>
+            {{/for}}
+        </ul>
+    </li>
+</script>
+<script type="text/javascript" src="../js/page/series.js"></script>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=127977e210f10"></script>

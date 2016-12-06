@@ -1,0 +1,121 @@
+.content .pull-right{
+    position: relative;
+    width: 860px;
+    height: 581px;
+}
+.content .pull-right table{
+    width: 100%;
+}
+.content .pull-right table tr td{
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+    width: 33%;
+    height: 218px;
+}
+.content .pull-right table tr td img{
+    width: 252px;
+    height: 145px;
+}
+.content .pull-right table tr td .text{
+    width: 252px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #d8d8d8;
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    font-size: 13px;
+    font-weight: 700;
+}
+.content .pull-right table tr~tr td{
+    padding-top: 25px;
+}
+
+/*��ҳ*/
+.house-bottom{
+    width: 100%;
+    text-align: center;
+    margin: 35px auto;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+}
+.house-bottom ul{
+    width: 450px;
+    margin: 0px auto;
+    height: 42px;
+    line-height: 42px;
+}
+.house-bottom li{
+    margin: 5px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    float: left;
+}
+.house-bottom .first{
+    background-image: url("../images/personage/shouye.png");
+}
+.house-bottom .prev{
+    background-image: url("../images/personage/shangyiye.png");
+}
+.house-bottom .next{
+    background-image: url("../images/personage/xiayiye2.png");
+}
+.house-bottom .last{
+    background-image: url("../images/personage/weiye2.png");
+}
+.house-bottom .first:hover{
+    background-image: url("../images/personage/shouye2.png");
+}
+.house-bottom .prev:hover{
+    background-image: url("../images/personage/shangyiye2.png");
+}
+.house-bottom .next:hover{
+    background-image: url("../images/personage/xiayiye.png");
+}
+.house-bottom .last:hover{
+    background-image: url("../images/personage/weiye.png");
+}
+.house-bottom .pagination{
+    width: 95px;
+}
+.house-bottom li a{
+    margin: 10px;
+    color: #cccccc;
+}
+.house-bottom li a:hover{
+    color: #ed6d00;
+}
+.house-bottom .input-box1{
+    border: 1px solid #d8d8d8;
+}
+.house-bottom .input-box1,
+.house-bottom .input-box2{
+    width:60px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 0px;
+    position: relative;
+}
+.house-bottom .input-box2{
+    border: 1px solid #ed6d00;
+    color: #ed6d00;
+}
+.house-bottom li input{
+    position: absolute;
+    background-color:transparent;
+    border: none;
+    top: 0px;
+    left: 0px;
+    width:60px;
+    height: 32px;
+    text-align: center;
+}
+.house-bottom .input-box .button {
+    width: 60px;
+    height: 32px;
+    color: #ed6d00;
+}

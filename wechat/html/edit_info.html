@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>编辑资料</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="编辑资料" />
+    <meta name="Keywords" content="编辑资料" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="../js/page/edit_info.js"></script>
+</head>
+
+<body>
+    <div class="ui-form" style="margin-top:20px;">
+        <form action="#">
+            <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style">
+            	<label>头像</label>
+                <div class="ui-avatar photo_position upload_div" style="background-image:none;">
+                    <span id="myImageShow"></span>
+                    <input type="hidden" id="imgUrl" name="picurl" value=""/>
+                    <input type="file" id="uploadPhotoFile" name="photoFile" class="upload_file">
+                </div>
+            </div>
+            <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style" onclick="RedirectUrl('edit_info_uname.html');">
+            	<label for="#">姓名</label>
+                <input type="text" id="userName" value="" readonly>
+            </div>
+            <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style"
+            onclick="RedirectUrl('edit_info_gender.html');">
+            	<label>性别</label>
+                <input type="text" id="gender" value="" readonly>
+            </div>
+            <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style"
+            onclick="RedirectUrl('edit_info_mobile.html');">
+            	<label>手机号</label>
+                <input type="text" id="mobile" value="" readonly>
+            </div>
+            <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style"
+            onclick="RedirectUrl('edit_info_address.html');">
+            	<label>地址</label>
+                <input type="text" id="address" value="" readonly>
+            </div>
+        </form>
+    </div>
+    <div class="ui-btn-wrap ui-btn-position" style="margin-top:30%;">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg">保存</button>
+    </div>
+</body>
+</html>

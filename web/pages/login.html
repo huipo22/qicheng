@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/login.css"/>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javas·cript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="sylphon"></div>
+    <div class="logo">
+        <img src="../images/login/logo.png">
+    </div>
+    <form class="form" action="">
+        <div class="number">
+            <input type="tel" id="number" placeholder="请输入手机号" maxlength="11"/>
+            <span></span>
+        </div>
+        <div class="number">
+            <input type="password" id="password" placeholder="请输入密码" maxlength="18"/>
+            <span></span>
+        </div>
+        <div class="login">
+            <span class="pull-left">
+                <span onclick="remember()"><img src="../images/login/checkbox1.png" class="changeimgs"></span>
+                <span>记住密码</span>
+            </span>
+            <a class="pull-right" href="change-one.html">忘记密码？</a>
+        </div>
+        <div class="hint" style="margin-top:80px;"></div>
+        <div class="submit">
+            <button id="submit" onclick="login()"><a href="#" style="text-decoration: none;color:#fff;">登录</a></button>
+            <div class="login">
+                <span>还没账号？</span>
+                <a href="register.html">立即注册</a>
+            </div>
+        </div>
+
+    </form>
+    <script>
+        $(document).ready(function(){
+            if(window.localStorage.getItem("src")){
+                $(".changeimgs").attr("src","../images/login/checkbox2.png")
+            }else{
+                $(".changeimgs").attr("src","../images/login/checkbox1.png")
+            }
+            $("#number").val(window.localStorage.getItem("mobile"))
+            $("#password").val(window.localStorage.getItem("password"))
+        })
+        function remember(){
+           if($(".changeimgs").attr("src")=="../images/login/checkbox1.png"){
+               $(".changeimgs").attr("src","../images/login/checkbox2.png")
+               var src=$(".changeimgs").attr("src")
+               window.localStorage.setItem("src",src)
+           }else{
+               $(".changeimgs").attr("src","../images/login/checkbox1.png")
+               window.localStorage.clear();
+           }
+        }
+        function login() {
+            var event=window.event||arguments.callee.caller.arguments[0];
+            event.returnValue = false;
+//            event.preventDefault();
+            var mobile=$("#number").val();
+            var password=$("#password").val();
+            if(mobile==""){
+                $(".hint").text("请输入用户名")
+                return false;
+            }
+            if(!/^1[3-9]\d{9}$/.test(mobile)){
+                $(".hint").text("手机号格式不正确");
+                return false;
+            }
+            if(password==""){
+                $(".hint").text("请输入密码")
+                return false;
+            }
+            if(mobile!=""&&password!="") {
+                $.ajax({
+                    url: root_path + "user/login",
+                    type: 'post',
+                    async: false,
+                    data: {
+                        mobile: mobile,
+                        password: password
+                    },
+                    success: function (result) {
+                      if(result.code==1) {
+                          var form=document.forms[0]
+                          /*判断是否是产品系列页面的未登录*/
+                          var froms=GetQueryString("from");
+                          if(!froms){
+                              form.action="../index.html";
+                              window.sessionStorage.setItem("gender",result.object.gender)
+                              window.sessionStorage.setItem("mobile",mobile)
+                              if(result.object.userName!=undefined){
+                                  window.sessionStorage.setItem("userName", result.object.userName)
+                              }else{
+                                  window.sessionStorage.setItem("userName", "")
+                              }
+                              window.sessionStorage.setItem("id",result.object.id)
+                              RedirectUrl(form.action)
+                          }else{
+                              form.action=froms;
+                              window.sessionStorage.setItem("gender",result.object.gender)
+                              window.sessionStorage.setItem("userName", result.object.userName)
+                              window.sessionStorage.setItem("id",result.object.id)
+                              window.sessionStorage.setItem("mobile",mobile)
+                              RedirectUrl(froms)
+                          }
+
+                          //判断生成cookies
+                          if($(".changeimgs").attr("src")=="../images/login/checkbox2.png"){
+                              window.localStorage.setItem("mobile",mobile)
+                              window.localStorage.setItem("password",password)
+                          }
+                      }else if(result.code==0){
+                          $(".hint").text(result.message)
+                      }
+                    }
+                });
+            }
+        }
+    </script>
+    <div class="bottom">
+        <div>上海栖丞室内设计工程有限公司</div>
+        <div>© 2016 xichengshejixichengsheji  All Rights Reserved</div>
+    </div>
+</div>
+</body>
+</html>

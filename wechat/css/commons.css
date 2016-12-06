@@ -1,0 +1,234 @@
+/* 底角菜单样式 */
+body,html,*{
+	font-family: "Microsoft YaHei" ! important;
+}
+.ui-footer{
+    height: 56px;
+    margin-bottom: -1px;
+}
+.ui-footer img {
+    width: 30px;
+}
+
+.ui-footer .ui-tiled {
+    line-height: 14px;
+    font-size: 13px;
+    color: #ADADAD;
+    background-color:#F3F3F4;
+}
+
+.ui-footer .ui-tiled .active {
+    color: #ee6d00;
+}
+
+.ui-footer .ui-tiled li {
+    padding: 5px 0;
+}
+.ui-btn:before, .ui-btn-lg:before, .ui-btn-s:before{
+    border:0;
+}
+.ui-reddot-s:after {
+    width: 8px;
+    height: 8px;
+    top: -4px;
+    right: -4px;
+    background-color: #FDB334;
+}
+.bg_fenge{
+   background:#fafafa;
+   height:1rem;
+   margin-top:1rem; 
+}
+/* 系统按钮样式 */
+.ui-btn-bg{
+	background: #ed6d00 !important;
+	border-radius: 10px;
+}
+.ui-btn-danger:before{
+	border: none;
+}
+.ui-btn-position{
+	margin-top: 60%;
+}
+/* 意见反馈文本框 */
+.feedback_textarea{
+	padding-left:0 !important;
+	height:200px;
+}
+/* 修改密码框样式 */
+.modify_pwd_style{
+	margin-left: 10px;
+	padding-left: 0;
+	height: 54px;
+	line-height: 54px;
+}
+.modify_pwd_style1{
+	margin-left: 40px;
+	padding-left: 0;
+	height: 54px;
+	line-height: 54px;
+}
+.modify_pwd_style1 img{
+	width: 20px;
+	height: 20px;
+	position:absolute;
+	left:-30px;
+	top:50%;
+	margin-top:-10px;
+}
+.modify_pwd_style input{
+	text-align: right;
+	padding-right: 20px;
+}
+.modify_input_position{
+	text-align: left;
+}
+.modify_input_position .edit_info_iput{
+	padding-left: 10px;
+}
+/* 头像样式 */
+.photo_position{
+	position: absolute;
+	right: 35px;
+	top: 2px;
+}
+/* 性别样式 */
+.radio_gender{
+	width: 70%;
+	margin-top:10px;
+}
+.ui-form-item-radio p{
+	margin-right: 2rem;
+}
+.ui-border-l{
+	color: #ee6d00 !important;
+}
+.ui-form-item-r button{
+	border: 1px solid #ee6d00;
+	border-radius: 10px;
+	margin-right: 20px;
+	width: 110px;
+	height: 38px;
+	margin-top: 3px;
+}
+/* 合作品牌图片样式 */
+.ui-grid-trisect>li{
+	width: 50%;
+	height: 50%;
+}
+.ui-grid li, .ui-grid-trisect li, .ui-grid-halve li{
+	padding-bottom: 2.5px;
+}
+.ui-grid-trisect{
+	padding-left: 0;
+	padding-right: 0;
+}
+/* 个人中心头像样式 */
+.my_photo{
+	position:absolute;
+	left:50%;
+	width:160px;
+	margin-left:-75px;
+	text-align:center;
+	top:50%;
+	margin-top:-60px;
+	color:#fff;
+}
+/* 我的订单 */
+.order_li{
+	margin-left:0 !important;
+	margin-top:20px;
+	background:#fff;
+	padding-left:10px;
+	border-bottom:1px solid #e4e4e4;
+	border-top:1px solid #e4e4e4;
+}
+.order_li .order_header{
+	margin-top:10px;
+	border-bottom:1px solid #e4e4e4;
+	padding:5px 0;
+}
+.order_li .order_header span{
+	float:right;
+	margin-right:10px;
+}
+/** 产品系列样式 */
+.type_select{
+	text-align: center;
+	background: #fff;
+	z-index: 100;
+}
+.type_select li{
+	height: 4rem  !important;
+	line-height: 4rem !important;
+	border-bottom: 1px solid #e4e4e4 !important;
+	cursor: pointer !important;
+}
+/* 滚动ul样式 */
+.ui-scroller{
+	width:100%;
+	overflow:hidden;
+}
+.ui-tab-scoller{
+	background-color: #fff;
+	display: -webkit-inline-box;
+	font-size: 14px;
+	height: 45px;
+	box-sizing: border-box;
+	width: auto;
+	border-top:1px solid #eee;
+	min-width: 100%;
+}
+.ui-tab-scoller li{
+	height: 45px;
+	line-height: 45px;
+	-webkit-box-flex: 1;
+	text-align: center;
+	color: #666;
+	box-sizing: border-box;
+	border-bottom: 2px solid transparent;
+	max-width: 6rem;
+	min-width: 6rem;
+}
+.upload_file{
+	position:absolute;
+	top:0;
+	right:0;
+	opacity:0;
+	height:100%;
+	cursor:pointer;
+}
+/** 禁止点击 */
+.disable_click{
+	pointer-events: none;
+}
+.ui-border-l{
+	width: 35%;
+	background: #3d3c3c;
+	color: #fff !important;
+	height: 2rem;
+	border-radius: 10px;
+	float: right;
+}
+.style li>img {
+	width: 5rem;
+	height: 5rem;
+}
+/*关于我们*/
+.about_logo{
+	width: 100%;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+.about_logo img{
+	width: 18%;
+}
+#aboutTpl{
+	padding-left: 4%;
+	padding-right: 4%;
+}
+/*修改手机*/
+.ui-border-l{
+	border: none;
+}

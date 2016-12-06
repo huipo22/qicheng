@@ -1,0 +1,38 @@
+body{
+	background:url('../img/login/bg.png') no-repeat center center;
+	background-size: cover;
+}
+.ui-btn-wrap div,.ui-btn-wrap a{
+	color: #fff;
+	text-align: center;
+}
+.ui-btn-wrap div{
+	margin-top: 1rem;
+}
+a{
+	color: #fff;
+	text-align: center;
+	text-decoration: underline;
+}
+input{
+	width: 92%;
+	height: 2rem;
+	border: 1px solid #fff;
+	color: #fff;
+	border-radius: 10px;
+	margin-bottom: 1.5rem;
+	background: none;
+	padding: 0 4%;
+}
+.forget_link{
+	text-align:right;
+	margin-bottom:5rem;
+}
+.layout_w{
+	width:80%;
+	margin:0 auto;
+}
+.logo{
+	text-align:center;
+	margin:2rem 0;
+}

@@ -1,0 +1,77 @@
+.myIndent{
+    width: 1050px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.myIndent .indent-top{
+    height: 70px;
+    line-height: 70px;
+    background-color: #ed6d00;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.myIndent .details{
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+}
+.myIndent .details table{
+    margin-top: 10px;
+    width: 100%;
+}
+.myIndent .details table tr td{
+    padding-left: 135px;
+    padding-top: 20px;
+    font-size: 15px;
+}
+.myIndent .details table tr td .price{
+    color: #ed6d00;
+    font-weight: bold;
+}
+.myIndent .details .btn-box a{
+    display: inline-block;
+    *display:inline; *zoom:1;
+    color: white;
+    width: 178px;
+    height: 28px;
+    line-height: 28px;
+    color: white;
+    border: transparent;
+    border-radius: 10px;
+    background-image:url("../images/product/buttonNext.png");
+}
+.myIndent .details .btn a:hover{
+    text-decoration: none;
+}
+.myIndent .details .btn-box{
+    width: 100%;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.productLine{
+    width: 1050px;
+    margin: 0 auto;
+}
+.productLine .productLine-top{
+    width: 130px;
+    height: 25px;
+    margin: 20px 0px;
+}
+.productLine .productLine-top span{
+    font-size: 16px;
+    margin-left: 5px;
+    color: #ed6b00;
+}
+.productLine .productLine-center{
+    margin-bottom: 85px;
+}
+.productLine .productLine-center .img,
+.productLine .productLine-center .text{
+    text-align: center;
+    margin-top: 50px;
+}
+.productLine .productLine-center .text a{
+    color: #ed6d00;
+}

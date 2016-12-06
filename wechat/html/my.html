@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="我的" />
+    <meta name="Keywords" content="我的" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+
+</head>
+
+<body style="background-color:#f7f7f7;">
+    <div style="position:relative;">
+        <img src="../img/my/logo.png" width="100%">
+        <div class="my_photo">
+            <img style="width:66px;height:66px;border-radius:50%;" onclick="RedirectUrl('edit_info.html');" src="../img/my/touxiang2.png">
+        	<p></p>
+        	<p></p>
+        </div>
+    </div>
+    <div class="ui-form" style="margin-top:20px;">
+        <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style1"
+        onclick="RedirectUrl('myhistory.html');">
+        	<img src="../img/my/history.png"><label>我的收藏</label>
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style1" onclick="RedirectUrl('myorder.html');">
+        	<img src="../img/my/order.png"><label>我的订单</label>
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style1"
+        onclick="RedirectUrl('modifypwd.html');">
+        	<img src="../img/my/pwd.png"><label>密码管理</label>
+        </div>
+    </div>
+    <div class="ui-form" style="margin-top:20px;">
+        <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style1"
+        onclick="RedirectUrl('about_me.html');">
+        	<img src="../img/my/about.png"><label>关于我们</label>
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-form-item-link ui-border-b modify_pwd_style1"
+        onclick="RedirectUrl('feedback.html');">
+        	<img src="../img/my/feed.png"><label>意见反馈</label>
+        </div>
+    </div>
+    <div class="ui-btn-wrap" style="width:80%;margin:auto;margin-bottom:56px;">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg" style="width:100%;">退出登录</button>
+    </div>
+    <br>
+    <br>
+    <footer class="ui-footer">     
+        <ul class="ui-tiled">
+            <li onclick="RedirectUrl('index.html');">
+                <img src="../img/nav/home2.png" />
+                <div>首页</div>
+            </li>
+            <li onclick="RedirectUrl('series.html');">
+                <img src="../img/nav/chanpin2.png" />
+                <div>产品系列</div>
+            </li>
+            <li onclick="RedirectUrl('brand.html');">
+                <img src="../img/nav/hezuo2.png" />
+                <div>合作品牌</div>
+            </li>
+            <li class="active">
+                <img src="../img/nav/wode1.png" />
+                <div>我的</div>
+            </li>
+        </ul>
+    </footer>
+    <div class="ui-poptips ui-poptips-warn" style="display:none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../js/page/my.js"></script>

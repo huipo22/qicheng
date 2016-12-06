@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="注册" />
+    <meta name="Keywords" content="注册" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/register.js"></script>
+</head>
+
+<body>
+    <div class="layout_w">
+        <form action="#">
+        	<div class="logo">
+        		<img src="../img/login/logo.png">
+        	</div>
+            <div>
+            	<input type="text" id="mobile" placeHolder="请输入手机号" maxlength="11" />
+            </div>
+            <div>
+            	<input type="text" id="code" placeHolder="请输入验证码" style="width:50%;" />
+            	<button type="button" class="ui-border-l">获取验证码</button>
+            </div>
+            <div>
+            	<input type="password" id="password" placeHolder="请输入密码" />
+            </div>
+            <div>
+            	<input type="password" id="password_again" placeHolder="请再次输入密码" />
+            </div>
+        </form>
+    </div>
+    <div class="ui-btn-wrap layout_w">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg">注册</button>
+        <div>已有账号？<a href="login.html">立即登录</a></div>
+    </div>
+    <div class="ui-poptips ui-poptips-warn" style="display:none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+</body>
+</html>

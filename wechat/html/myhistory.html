@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>我的收藏</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="我的收藏" />
+    <meta name="Keywords" content="我的收藏" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/myhistory.js"></script>
+    <style type="text/css">
+    	.ui-slider{
+    		padding-top:0;
+    		background:#fff;
+    		margin-bottom:1rem;
+    	}
+    	.ui-slider div{
+    		padding: .3rem 0 .5rem .5rem;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="myhistory"></div>
+    <div class="ui-poptips ui-poptips-wran" style="display: none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+    <div class="ui-loading-block">
+        <div class="ui-loading-cnt">
+            <i class="ui-loading-bright"></i>
+            <p>正在加载中...</p>
+        </div>
+    </div>
+    <!-- 我的收藏模板 -->
+    <script type="text/x-jsrender" id="myhistory_tmpl">
+        <div class="ui-slider" onclick="RedirectUrl('collection_detail.html?id={{:id}}');">
+            <img src="{{getImagePath:logo}}" width="100%">
+            <div>{{:seriesName}}装修效果图</div>
+        </div>
+    </script>
+</body>
+</html>

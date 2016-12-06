@@ -1,0 +1,135 @@
+html,
+body,
+div,
+span,
+a,
+p,
+input,
+ul,
+li{
+    font-weight: normal;
+    font-family: "Microsoft YaHei";
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+/*�����Ĭ����ʽ*/
+.defaultSetting{
+    /*margin-left: -1px;*/
+    background-image: url("../images/platform/li.png");
+    color: #ffffff;
+}
+
+/*ͷ����ʽ*/
+ul,li{
+    margin: 0px;
+    padding: 0px;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    *display:inline;
+    zoom: 1;
+}
+.nav,
+.head{
+    width: 100%;
+}
+.nav{
+    border-bottom: 1px solid #a7a7a7;
+}
+.head{
+    background-color: #323232;
+}
+.head-content,
+.nav-content{
+    width: 1050px;
+    margin:0 auto;
+}
+.head-content{
+    height: 50px;
+    line-height: 50px;
+}
+.head-content .head-left,
+.head-content .head-right{
+    height: 50px;
+}
+.head-left ul li{
+    font-size: 14px;
+    color: white;
+}
+.nav-right ul li a,
+.head-right {
+    color: #666666;
+}
+.head ul li ul li{
+    text-align: center;
+}
+.head .head-content .head-left ul li ul li a{
+    color: white;
+    overflow: hidden;
+    text-decoration: none;
+}
+.head .head-content .head-left ul li~li a{
+    color: white;
+    padding-left: 25px;
+    overflow: hidden;
+    text-decoration: none;
+    border-left: 1px solid white;
+}
+.head-right ul li{
+    margin-right: 10px;
+}
+.head-right ul .phone{
+    font-size: 14px;
+    color: #cccccc;
+}
+.head-right ul .number{
+    font-size: 20px;
+    color: #cccccc;
+}
+.ul1>li:first{
+    text-decoration: none;
+    color:#fff;
+}
+.ul1>li img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.nav-content{
+    height: 70px;
+    line-height: 70px;
+}
+.nav-right ul li{
+    margin-left: 100px;
+    font-size: 17px;
+    width: 100px;
+}
+.nav-right ul li a{
+    text-decoration: none;
+}
+.nav-right ul li a:hover{
+    color: #ed6d00;
+}
+.active{
+    color: #ed6d00 !important;
+}
+.house-bottom .disabled{
+    pointer-events: none;
+}
+.hint{
+    text-align: center;color: red
+}
+/*body{*/
+    /*min-height: 773px;*/
+/*}*/
+
+/*只能输入数字兼容   */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+input[type="number"]{-moz-appearance:textfield;}

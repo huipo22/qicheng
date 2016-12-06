@@ -1,0 +1,58 @@
+body{
+    position: relative;
+}
+.bottom-box{
+    width: 100%;
+    height: 130px;
+    background-color: #323232;
+    position: absolute;
+    left: 0;
+    /*bottom:0;*/
+}
+
+.bottom{
+    width: 1050px;
+    height: 125px;
+    margin: 0 auto;
+}
+.bottom .bottom-left span,
+.bottom .bottom-left span a{
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+}
+.bottom .bottom-left{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.bottom .bottom-left div{
+    margin-top: 5PX;
+}
+.bottom .bottom-left .relation span{
+    margin-right: 20px;
+}
+.bottom .bottom-right{
+    height: 125px;
+    margin-right: 105px;
+}
+.bottom .bottom-right div{
+    color: white;
+    text-align: center;
+}
+.bottom .bottom-right .f1{
+    font-size: 11px;
+    line-height: 27px;
+}
+.bottom .bottom-right .f2{
+    width: 75px;
+    height: 75px;
+    position: relative;
+}
+.bottom .bottom-right .f2 img{
+    width: 100%;
+    height: 100%;
+}
+.bottom .bottom-right .f3{
+    font-size: 15px;
+    line-height: 27px;
+}

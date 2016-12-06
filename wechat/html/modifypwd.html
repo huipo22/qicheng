@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>修改密码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="修改密码" />
+    <meta name="Keywords" content="修改密码" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/modifypwd.js"></script>
+</head>
+
+<body>
+    <div class="ui-form" style="margin-top:20px;">
+        <form action="#">
+            <div class="ui-form-item ui-form-item-pure ui-border-b modify_pwd_style" style="text-align: left;">
+                <input type="password" id="old_pwd" placeholder="请输入原密码">
+            </div>
+            <div class="ui-form-item ui-form-item-pure ui-border-b modify_pwd_style" style="text-align: left;">
+                <input type="password" id="new_pwd" placeholder="请输入新密码">
+            </div>
+            <div class="ui-form-item ui-form-item-pure ui-border-b modify_pwd_style" style="text-align: left;">
+                <input type="password" id="new_ag_pwd" placeholder="请输入确认密码">
+            </div>
+        </form>
+    </div>
+    <div class="ui-btn-wrap ui-btn-position">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg">提交</button>
+    </div>
+    <div class="ui-poptips ui-poptips-warn" style="display:none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.confirm img{
+    width: 70%;
+    margin-top: 40px;
+}
+.confirm p{
+    margin: 10px 0px 20px 0px;
+}
+.confirm .ui-flex{
+    text-align: center;
+}
+.confirm .details{
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.confirm .details>div{
+    margin-top: 10px;
+ }
+.confirm .details div div{
+    display: inline-block;
+    float: left;
+}
+.confirm .details div .text{
+    width: 60%;
+    float: left;
+    line-height: 1.5em;
+}
+.confirm .details div ul li{
+    margin-top: 10px;
+}
+.confirm .details .price{
+    color: red;
+    font-weight: 600;
+}

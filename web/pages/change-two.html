@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/login.css"/>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+</head>
+<body>
+<div></div>
+<div class="container">
+    <div class="logo">
+        <img src="../images/login/logo.png">
+    </div>
+
+    <form class="form change">
+        <div class="step">
+        <span>
+            <img src="../images/login/kuang4.png">
+            <div class="step-1">
+                <img src="../images/login/no4.png" alt=""/>
+                <span>身份验证</span>
+            </div>
+        </span>
+        <span>
+            <img src="../images/login/kuang3.png">
+            <div class="step-2">
+                <img src="../images/login/no3.png" alt=""/>
+                <span>密码设置</span>
+            </div>
+        </span>
+        </div>
+        <div class="number">
+            <input type="password" id="number" placeholder="请输入密码" maxlength="18" />
+            <span></span>
+        </div>
+        <div class="number">
+            <input type="password" id="password" placeholder="请再次输入密码"  maxlength="18" />
+            <span></span>
+        </div>
+        <div class="hint"></div>
+        <div class="submit">
+            <button id="submit" onclick="tijiao()">提交</button>
+        </div>
+    </form>
+    <div class="bottom">
+        <div>上海栖丞室内设计工程有限公司</div>
+        <div>© 2016 xichengshejixichengsheji All Rights Reserved</div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload=function(){
+//        window.sessionStorage.clear();
+        $("#number").val("");
+    }
+    function tijiao() {
+            var event = window.event || arguments.callee.caller.arguments[0];
+            event.returnValue = false;
+            event.preventDefault()
+            var yzm = window.sessionStorage.getItem("yzm");
+            var mobile = window.sessionStorage.getItem("mobile");
+            var newPassword = $("#password").val();
+            if($("#number").val()==""){
+                $(".hint").text("密码不能为空")
+                return
+            }
+            if(!/^[0-9a-zA-Z]{6,18}/.test($("#number").val())){
+                $(".hint").text("请输入6-18位密码")
+                return
+            }
+            if (newPassword == "") {
+                $(".hint").text("请输入确认密码")
+                return
+            }
+            if (!/^[0-9a-zA-Z]{6,18}/.test(newPassword)) {
+                $(".hint").text("密码强度不符合")
+                return
+            }
+            var one = $("#number").val();
+            var two = $("#password").val();
+            if (one == two) {
+                $.ajax({
+                    url: root_path + "user/forgetPwd",
+                    type: 'post',
+                    async: false,
+                    data: {
+                        mobile: mobile,
+                        newPassword: newPassword,
+                        code: yzm
+                    },
+                    success: function (data) {
+                        if (data.code == 1) {
+                            $(".hint").text("密码修改成功")
+                            setTimeout(function () {
+                                var b = window.location.href
+                                var a = b.indexOf("pages")
+                                var str = b.substr(0, a + 6)
+                                var url = str + "login.html"
+                                RedirectUrl(url)
+                            }, 2000)
+
+                        } else {
+                            $(".hint").text(data.message)
+                        }
+                    },
+                    error: function (data) {
+                        alert(data.error)
+                    }
+
+                });
+            } else {
+                $(".hint").text("两次输入的密码不一致")
+            }
+    }
+    (function () {
+        var b = window.location.href
+        var a = b.indexOf("pages")
+        var str = b.substr(0, a + 6)
+        var url = str + "login.html"
+    })()
+
+</script>

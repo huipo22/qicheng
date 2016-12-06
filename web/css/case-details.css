@@ -1,0 +1,143 @@
+.content,
+.intro{
+    width: 1050px;
+    margin: 0px auto;
+}
+.content .intro h1{
+    font-size: 16px;
+}
+
+.content .intro p{
+    font-size: 13px;
+    height: 20px;
+}
+.content .intro .p3{
+    position: relative;
+}
+.content .intro .p3 .span1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.content .intro .p3 .span2{
+    position: absolute;
+    top: 0px;
+    left: 220px;
+}
+.content .intro .p3 .span3{
+     position: absolute;
+     top: 0px;
+     right: 0px;
+}
+.content .intro .p3 .span3 .price{
+    font-size: 16px;
+    color: #ed6d00;
+}
+.content .banner-box{
+    margin-top: 20px;
+    position: relative;
+}
+.content .banner-box,
+.content .banner,
+.content .banner ul li img{
+    width: 1050px;
+    height: 525px;
+}
+.content .banner{
+    overflow: hidden;
+}
+.content .banner ul{
+    width: 800%;
+}
+.content .banner ul li{
+    float: left;
+}
+.content .banner div{
+    width: 55px;
+    height: 100px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+}
+.content .banner .left{
+    background-image: url("../images/index/arrowleft2.png");
+    left: 40px;
+}
+.content .banner .right{
+    background-image: url("../images/index/arrowright2.png");
+    right: 40px;
+}
+.content .banner .left:hover{
+    background-image: url("../images/index/arrowleft1.png");
+}
+.content .banner .right:hover{
+    background-image: url("../images/index/arrowright1.png");
+}
+
+.productLine{
+    width: 1050px;
+    margin: 0 auto;
+}
+
+/*ҵ������*/
+.comment{
+    width: 1050px;
+    padding-top: 20px;
+    margin: 10px auto 40px auto;
+    border-top: 1px solid #cccccc;
+}
+.content .comment .comment-text-p{
+    width: 1030px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.content .comment  .comment-text-p p{
+    padding: 5px;
+}
+.content .comment .comment-text ul li{
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    cursor: pointer;
+}
+.content .comment .comment-text ul li img{
+    width: 70px;
+    height: 70px;
+}
+/*ҵ������ͼ*/
+.mask{
+    background: black;
+    position:absolute;
+    opacity: .5;
+    filter:alpha(opacity=50);
+    z-index: 8000;
+    display: none;
+    overflow-y: scroll;
+}
+.Image{
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9000;
+    display: none;
+    text-align: center;
+}
+.Image img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.productLine .productLine-center{
+    margin-bottom: 85px;
+}
+.productLine .productLine-center .img,
+.productLine .productLine-center .text{
+    text-align: center;
+    margin-top: 50px;
+}
+.productLine .productLine-center .text a{
+    color: #ed6d00;
+}

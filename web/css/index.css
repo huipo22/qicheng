@@ -1,0 +1,255 @@
+html,
+body,
+div,
+span,
+a,
+p,
+input,
+ul,
+li{
+    font-weight: normal;
+    font-family: "Microsoft YaHei";
+}
+
+/*����ͼ*/
+.banner-box{
+    width: 100%;
+    min-width: 1300px;
+    position: relative;
+    height: 640px;
+    overflow: hidden;
+}
+.banner{
+    min-width: 1366px;
+    height: 640px;
+}
+.banner a{
+    min-width: 1366px;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.banner a.firstImg {
+    display: block;
+}
+.banner a,
+.banner a img{
+    width: 100%;
+    height: 640px;
+}
+.banner-box .banner a img{
+    width: 100%;
+    height: 640px;
+}
+/*����ͼԲ��*/
+.banner-icons {
+    position: absolute;
+    bottom: 20px;
+    /*left: 50%;*/
+    /*margin-left: -78px;*/
+    z-index: 20;
+    width: 100%;
+    height: 54px;
+    text-align: center;
+}
+.banner-icons ul {
+    font-size: 0;
+    height: 40px;
+}
+.banner-icons ul li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background: url(../images/index/circle2.png) no-repeat;
+    margin: 0 10px;
+}
+/*js����*/
+
+.banner-icons ul li.overWhite {
+    margin: 0 10px;
+    width: 40px;
+    background: url(../images/index/circle1.png) no-repeat;
+}
+/*����ͼ���Ұ�ť*/
+/*����ͼԲ��*/
+.banner-left{
+    z-index: 20;
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    width: 50px;
+    height: 100px;
+    background-image: url("../images/index/arrowleft2.png");
+}
+.banner-right{
+    z-index: 20;
+    position: absolute;
+    top: 300px;
+    right: 100px;
+    width: 50px;
+    height: 100px;
+    background-image: url("../images/index/arrowright2.png");
+}
+.banner-right:hover{
+    cursor: pointer;
+    background-image: url("../images/index/arrowright1.png");
+}
+.banner-left:hover{
+    cursor: pointer;
+    background-image: url("../images/index/arrowleft1.png");
+}
+/*����ͼ����*/
+
+.series-box,
+.intro-box,
+.more-box{
+    width: 100%;
+}
+.series-box .series,
+.intro-box .intro{
+    width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+.series-box .series .series-text{
+    width: 200px;
+    font-size: 36px;
+    margin: 75px auto 0 auto ;
+}
+.series-box .series .series-text img{
+    margin-top: 0px;
+}
+.series-box .series .series-img{
+    width: 1100px;
+    text-align: center;
+}
+.series-box .series .series-img ul li{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin: 70px 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.series-box .series .series-img ul li img{
+    width: 100%;
+    height: 100%;
+}
+.series-box .series .series-img ul li div{
+	width: 280px;
+    height: 280px;
+	position: absolute;
+	top: 0;
+	left: 0;
+    display: none;
+}
+.series-box .series .series-img ul li div p{
+	position: absolute;
+	font-size: 22px;
+	top: 200px ;
+	color: white;
+    width: 100%;
+}
+.series-box .series .series-img ul li div img{
+	width: 100%;
+}
+.intro-box .intro ul li{
+    position: relative;
+    margin:0  85px;
+}
+.intro-box .intro ul li div{
+    width: 100px;
+    height: 115px;
+}
+.intro-box .intro ul li div img{
+    width: 100%;
+    height: 100%;
+}
+.intro-box .intro ul li p{
+    margin-top: 30px;
+}
+.intro-box .intro ul li p a{
+    color: #666666;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.more-box{
+    overflow: hidden;
+    margin-top:70px;
+    background-image: url("../images/index/bg_shouye.png");
+    background-repeat: no-repeat;
+    background-size: 100% 335px;
+}
+.more-box .more{
+    width: 1050px;
+    /*height: 465px;*/
+    /*min-height: 465px;*/
+    margin:0 auto;
+}
+.more-box .more .more-left{
+    width: 600px;
+    height:300px;
+}
+.more-box .more .more-left{
+    margin-top: 10px;
+    position: relative;
+}
+.more-box .more .more-left ul li{
+    display: block;
+    width: 470px;
+    height:260px;
+}
+.more-box .more .more-left ul li img{
+    width: 100%;
+    height: 100%;
+}
+.more-box .more .more-left .t2{
+    position: absolute;
+    top: 15px;left: 55px;
+}
+.more-box .more .more-left .t1{
+    position: absolute;
+    top: 40px;left: 30px;
+}
+.more-box .more .more-right{
+    margin-top:70px;
+}
+.more-box .more .more-right .p1{
+    font-size: 21px;
+    color: white;
+    margin-bottom: 20px;
+}
+.more-box .more .more-right .p2,
+.more-box .more .more-right a{
+    font-size: 15px;
+    color: #ed6d00;
+    width: 380px;
+    line-height: 25px;
+}
+.more-box .more .more-right a~a{
+    margin-left: 10px;
+}
+.more-box .more .more-right .p3{
+    margin-top: 20px;
+}
+.describe span{
+    color: white;
+    font-size: 25px;
+    font-family: ����;
+}
+.describe span~span{
+    margin-left: 30px;
+}
+.describe{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    bottom: 120px;
+    z-index: 899;
+}

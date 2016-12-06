@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <title>广告详情</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta name="Description" content="广告详情"/>
+    <meta name="Keywords" content="广告详情"/>
+    <meta name="author" content="zhanglin"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon"/>
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+
+</head>
+<body style="background-color:#f5f5f5;">
+<div class="box" style="padding: 1rem;">
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: root_path + "banner/findBannerList",
+            type: "post",
+            async: false,
+            success: function (result) {
+                if (result.code == 1) {
+                    $.each(result.object,function(){
+                        if(this.id==GetQueryString("id")){
+                            $(".box").html(this.content)
+                        }
+                    })
+                } else {
+                    console.log(result.message)
+                }
+            }
+        });
+    })
+</script>

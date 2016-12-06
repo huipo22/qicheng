@@ -1,0 +1,31 @@
+
+.content{
+    width: 1050px;
+    margin-bottom: 50px;
+}
+.content .mainIngredient .mainIngredient-center{
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.content .mainIngredient .mainIngredient-center span{
+    font-size: 22px;
+    margin-left: 5px;
+    color: #ed6b00;
+}
+.content .mainIngredient div img{
+    margin-bottom: 10px;
+}
+.content .mainIngredient table tr{
+    margin-top: 20px;
+}
+.content .mainIngredient table tr td{
+    text-align: center;
+    padding: 10px;
+}
+.content .mainIngredient table tr td img{
+    width: 235px;
+    height: 165px;
+}

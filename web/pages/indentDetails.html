@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/head.css"/>
+    <link rel="stylesheet" href="../css/collectDetails.css"/>
+    <link rel="stylesheet" href="../css/indentDetails.css"/>
+    <link rel="stylesheet" href="../css/bottom.css"/>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+
+</head>
+<body>
+<!--头部start-->
+<div class="head">
+    <div class="head-content">
+        <div class="head-left pull-left">
+            <ul class="ul1">
+                <li>
+                    <ul>
+                        <span><a href="mydata.html"><img src="../images/index/touxiang.png"></a></span>
+                        <li><a href="mydata.html"id="username"></a></li>
+                        <li id="nannv"></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">退出</a></li>
+            </ul>
+        </div>
+        <div class="head-right pull-right">
+            <ul>
+                <li><img src="../images/index/kefu.png"></li>
+                <li class="phone">客服热线</li>
+                <li class="number">021-6124123</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--头部end-->
+<script>
+    var username=window.sessionStorage.getItem("userName")
+    var id=window.sessionStorage.getItem("gender")
+    var nannv="";
+    $("#username").text(username);
+    if(id==0){nannv="先生"}else if(id==1){nannv="女士"}
+    $("#nannv").text(nannv)
+</script>
+<!-- 导航栏start-->
+<div class="nav">
+    <div class="nav-content">
+        <div class="nav-left pull-left">
+            <a href="../index.html"><img src="../images/index/logo.png"/></a>
+        </div>
+        <div class="nav-right pull-right">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="productLine.html">产品系列</a></li>
+                <li><a href="case.html">成功案例</a></li>
+                <li><a href="platform.html">平台介绍</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--导航栏end-->
+<!--content start-->
+<div class="content clearfix">
+    <div class="content-left pull-left">
+        <ul>
+            <li><a href="mydata.html">我的资料</a></li>
+            <li><a href="myCollect.html">我的收藏</a></li>
+            <li><a href="myIndent.html">我的订单</a></li>
+            <li><a href="newPassword.html">密码管理</a></li>
+            <li><a href="feedback.html">意见反馈</a></li>
+        </ul>
+    </div>
+    <div class="content-reight pull-right">
+        <div class="content-box">
+            <div class="myIndent"></div>
+            <div class="productLine clearfix xiangmu">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--content end-->
+<script type="text/x-jsrender" id="aaa">
+        <div>
+            <div class="myIndent">
+                <div class="myIndent-top">
+                    <div class="myIndent-top-left">
+                        <span>订单编号：</span>
+                        <span>{{:orderNo}}</span>
+                    </div>
+                    <div class="myIndent-top-right">
+                        <span>下单时间：</span>
+                        <span>{{:createTime}}</span>
+                    </div>
+                </div>
+                <div class="myIndent-center">
+                    <table>
+                        <tr>
+                            <td>
+                                <span>面积：</span>
+                                <span>{{:area}}m²</span>
+                            </td>
+                            <td>
+                                <span>产品系列：</span>
+                                {{if productSeriesVo}}
+                                    <span>{{:productSeriesVo.seriesName}}</span>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>单价：</span>
+                                {{if productSeriesVo}}
+                                    <span>{{:productSeriesVo.price/100}}/m²</span>
+                                {{/if}}
+                            </td>
+                            <td>
+                                <span>参考价格：</span>
+                                {{if prices}}
+                                    <span class="price">￥{{:prices}}</span>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span>附加：</span>
+                                <span class="upder"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="myIndent-bottom">
+                    <table>
+                        <tr>
+                            <td>
+                                <span>联系人：</span>
+                                <span>{{:realName}}</span>
+                            </td>
+                            <td>
+                                <span>联系方式：</span>
+                                <span>{{:mobile}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                        <div class="address">
+                            <span>地址：</span>
+                            <span>{{:address}}</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+</script>
+<!--项目清单模板-->
+<script type="text/x-jsrender" id="bbb">
+   <div class="productLine-top">
+      <img src="../images/product/logo03.png" alt=""/>
+      <span>项目清单</span>
+   </div>
+    {{for scencelist}}
+        {{if materialItemsList.length!=0}}
+        <div class="listing pull-right clearfix">
+                    <div class="item">
+                        <img src="../images/product/juxing.png" alt=""/>
+                        <span>{{:sceneName}}</span>
+                    </div>
+                    {{for upgradeList}}
+                    <div class="upgrade-box">
+                        <div class="upgrade">
+                            <div class="p-top">升级包</div>
+                            <div>
+                                <div class="pull-left clearfix"><img src="{{getImagePath:imgurl}}" alt=""/></div>
+                                <div class="pull-right clearfix">
+                                    <p class="p1">
+                                        <span><span>名称：</span><span>{{:itemName}}</span></span><span>牌品：{{:brand}}</span><span>型号：{{:modelType}}</span>
+                                    </p>
+                                    <p>
+                                        <span>描述:</span>
+                                        <span>
+                                            {{:itemDesc}}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/for}}
+                    <div class="upgrade-box">
+                     {{for materialItemsList}}
+                        {{if upgradeVo}}
+                                <div class="upgrade">
+                                    <div class="p-top">{{:upgradeVo.upgradeName}}升级包</div>
+                                    <div>
+                                        <div class="pull-left clearfix"><img src="{{getImagePath:imgurl}}" alt=""/></div>
+                                        <div class="pull-right clearfix">
+                                            <p class="p1">
+                                                <span><span class="nameup">名称：{{:itemName}}</span></span><span>牌品：{{:brand}}</span><span>型号：{{:modelType}}</span>
+                                            </p>
+                                            <p>
+                                                <span>描述:</span>
+                                                <span>
+                                                    {{:itemDesc}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                        {{/if}}
+                    {{/for}}
+                  </div>
+                    {{for materialItemsList}}
+                        {{if upgradeVo}}
+                        {{else }}
+                        <div class="base-box clearfix">
+                            <div class="base">
+                            <div class="left"><img src="{{getImagePath:imgurl}}" alt=""/></div>
+                            <div class="right">
+                                <p class="p1"><span>名称：{{:itemName}}</span><span>品牌：{{:brand}}</span><span>型号：{{:modelType}}</span></p>
+                                <p>
+                                    <span>描述:</span>
+                                    <span>{{:itemDesc}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        </div>
+                    {{/if}}
+                    {{/for}}
+                </div>
+          {{/if}}
+    {{/for}}
+</script>
+<script type="text/javascript">
+    var orderNo = getorderno();
+    $(document).ready(function () {
+        leftnav();
+        if(window.sessionStorage.getItem("id")){
+            $.ajax({
+                url: root_path + "myorder/findMyorderById",
+                type: 'post',
+                data: "orderNo=" + orderNo,
+                async: false,
+                success: function (data) {
+                    if(data.code==1){
+                        var list=data.object;
+                        var temp=$("#aaa").render(list);
+                        $(".myIndent").html(temp);
+                        var tem=$("#bbb").render(list);
+                        $(".xiangmu").html(tem);
+                    }else{
+                        alert(data.message)
+                    }
+                },
+                error:function(data){
+                    alert(data.message)
+                }
+            });
+
+            var nameup=$(".upgrade>div[class=p-top]")
+            var name=$("span[class=nameup]")
+            var strup=""
+            var str=""
+            for(i=0;i<nameup.length;i++) {
+                if(i<name.length-1) {
+                    strup += ((name[i].innerHTML) + ",")
+                }else{
+                    strup += (name[i].innerHTML)
+                }
+                if(i<nameup.length-1) {
+                    str += ((nameup[i].innerHTML) + ",")
+                }else{
+                    str += (nameup[i].innerHTML)
+                }
+            }
+            var s =str.split(",");
+
+            var sp = strup.split(",");
+            var strr ="";
+            if(s!=""){
+                for(var i=0;i< s.length;i++){
+                    strr+=s[i]+"-"+sp[i].split("：")[1];
+                    if(i!= s.length-1){
+                        strr+="；";
+                    }
+                }
+                $(".upder").html(strr);
+            }else{
+                $(".upder").html("");
+            }
+        }else{
+           alert("您未登录")
+        }
+
+    });
+</script>
+<!--底部start-->
+<div class="bottom-box">
+    <div class="bottom">
+        <div class="bottom-left pull-left">
+            <div class="relation">
+                <span><a href="platform.html?id=0">关于我们</a></span>
+                <span><a href="platform.html?id=1">联系我们</a></span>
+                <span><a href="feedback.html">意见反馈</a></span>
+            </div>
+            <div class="service">
+                <span>客服热线:</span>
+                <span>021-61231234</span>
+            </div>
+            <div class="copyright"><span>© 版权所有 2015 粤ICP备12081684号</span></div>
+        </div>
+        <div class="bottom-right pull-right">
+            <div class="f1">微信客户端</div>
+            <div class="f2"><img src="../images/index/erweima.png"></div>
+            <div class="f3">扫一扫</div>
+        </div>
+
+    </div>
+</div>
+<!--底部end-->
+
+</body>
+</html>
+

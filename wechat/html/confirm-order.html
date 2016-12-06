@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>订单确认</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="ding" />
+    <meta name="Keywords" content="订单确认" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <!--公共样式 start-->
+    <link rel="stylesheet" href="../css/series.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/confirm-order.css"/>
+    <!--公共样式 end-->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+    <script type="text/javascript" src="../js/page/confirm-order.js"></script>
+</head>
+<body>
+<div class="confirm">
+    <div class="ui-flex ui-flex-pack-center">
+        <img src="../img/series/dingdan@2x.png">
+    </div>
+    <div class="ui-flex ui-flex-pack-center">
+        <p>请确认您的订单</p>
+    </div>
+    <div class="details" id="base" style="color:#666666;"></div>
+</div>
+<div class="ui-loading-block">
+    <div class="ui-loading-cnt">
+        <i class="ui-loading-bright"></i>
+        <p>正在加载中...</p>
+    </div>
+</div>
+<div class="login" style="display: none">
+    <img src="../img/series/weidenglu@2x.png" alt=""/><br>
+    <p class="p1">您还未登录，请先<a href="javascript:;">登录</a></p>
+</div>
+<div class="logo">
+    <img src="../img/series/logo3@2x.png" alt=""/>
+    <p>项目清单</p>
+</div>
+<div id="data-list">
+    <!-- 清单列表 -->
+    <ul id="itemsList"></ul>
+    <input type="button" style="border-radius:0; height:55px" value="下一步" class="form-btn"/>
+</div>
+</body>
+</html>
+
+<!-- 基础模板 -->
+<script type="text/x-jsrender" id="baseTmpl">
+    <div class="style">产品系列：{{:seriesName}}</div>
+    <div class="upgrade-box clearfix">
+         <div>附加：</div>
+          <div class="text">
+            <ul style="margin-bottom: 0;">
+                {{for sceneVoList}}
+                    {{for upgradeList}}
+                        {{if materialItemsList && materialItemsList.length > 0}}
+                            <li {{if #getIndex() == 0}}style="margin-top: 0;{{/if}}">{{:upgradeName}}升级包-{{:materialItemsList[0].itemName}}</li>
+                        {{/if}}
+                    {{/for}}
+                {{/for}}
+            </ul>
+          </div>
+    </div>
+    <div class="area-confirm">面积：{{:area}}m<sup>2</sup></div>
+    <div class="unitPrice">单价：{{:price/100}}元/m<sup>2</sup></div>
+    <div>参考价格：<span class="price">￥{{:totalPrice}}</span></div>
+</script>
+
+<!-- 清单列表模板 -->
+<script type="text/x-jsrender" id="itemsListTmpl">
+    <li style="{{if materialItemsList && materialItemsList.length <= 0 && upgradeList && upgradeList.length <= 0}}display: none;{{/if}}{{if #index == 0}}margin-top: 1rem;{{/if}}">
+        <div class="title">
+            <b></b><p>{{:sceneName}}</p>
+        </div>
+        <ul id="upgradeItemsList{{:id}}">
+            {{for upgradeList}}
+                {{if materialItemsList.length > 0}}
+                    <li data-id="{{:id}}">
+                        <div class="exp">
+                            <h4>{{:upgradeName}}升级包</h4>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="{{if materialItemsList[0].imgurl}}{{getImagePath:materialItemsList[0].imgurl}}{{/if}}" alt="" style="width: 14rem;height: 11rem;" />
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <ul class="list-unstyled">
+                                            <li>名称：{{:materialItemsList[0].itemName}}</li>
+                                            <li>品牌：{{:materialItemsList[0].brand}}</li>
+                                            <li>型号：{{:materialItemsList[0].modelType}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <p class="border_bottom_dished">描述：{{:materialItemsList[0].itemDesc}}</p>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/for}}
+        </ul>
+        <ul id="maItemsList{{:id}}" {{if materialItemsList && materialItemsList.length <= 0}}style="margin-top: 1rem;"{{/if}}>
+            {{for materialItemsList}}
+                <li>
+                    <div class="yiban">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" alt="" style="width: 14rem;height: 11rem;" />
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <ul class="list-unstyled">
+                                    <li>名称：{{:itemName}}</li>
+                                    <li>品牌：{{:brand}}</li>
+                                    <li>型号：{{:modelType}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>描述：{{:itemDesc}}</p>
+                    </div>
+                </li>
+            {{/for}}
+        </ul>
+
+    </li>
+
+</script>

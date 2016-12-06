@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="首页" />
+    <meta name="Keywords" content="首页" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+    <script type="text/javascript" src="../js/frozen.js"></script>
+</head>
+<body style="background-color:#fff;">
+    <section class="ui-container">
+       <div class="ui-slider" id="ui-slider" style="height:3rem;">
+           <ul class="ui-slider-content">
+                <!-- <li><span style="background-image:url('../img/index/nav1.png')"></span></li>
+                <li><span style="background-image:url('../img/index/nav2.png')"></span></li>
+                <li><span style="background-image:url('../img/index/nav3.png')"></span></li>
+                <li><span style="background-image:url('../img/index/nav1.png')"></span></li>
+                <li><span style="background-image:url('../img/index/nav2.png')"></span></li>
+                <li><span style="background-image:url('../img/index/nav3.png')"></span></li> -->
+           </ul>
+       </div>
+    </section>
+    <div id="ui-context" style="margin-top:30px;">
+        <div class="ui-whitespace" style="text-align:center;">
+            <h1>产品系列</h1>
+            <h1 style="font-size:1.3rem;">
+                <img src="../img/index/fenge.png">
+            </h1>
+        </div>
+    </div>
+    <div id="xilie-context" style="margin-top:40px;margin-bottom:30px;">
+        <ul class="ui-tiled style" style="padding: 0 20px;"></ul>
+    </div>
+    <div class="bg_fenge"></div>
+    <div class="bg_fenge"></div>
+    <div class="bg_fenge"></div>
+    <footer class="ui-footer">     
+        <ul class="ui-tiled">
+            <li class="active">
+                <img src="../img/nav/home1.png" />
+                <div>首页</div>
+            </li>
+            <li onclick="RedirectUrl('series.html');">
+                <img src="../img/nav/chanpin2.png" />
+                <div>产品系列</div>
+            </li>
+            <li onclick="RedirectUrl('brand.html');">
+                <img src="../img/nav/hezuo2.png" />
+                <div>合作品牌</div>
+            </li>
+            <li onclick="RedirectUrl('my.html');">
+                <img src="../img/nav/wode2.png" />
+                <div>我的</div>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
+<!-- Banner模板 -->
+<script type="text/x-jsrender" id="main_content_banner">
+    <li><a href="{{if linkurl}} {{:linkurl}} {{/if}} {{if linkurl==''}}advertisement.html?id={{:id}}{{/if}} "><span style="background-image:url('{{getImagePath:picurl}}')" ></span></a></li>
+</script>
+<!-- 首页  产品系列模板 -->
+<script type="text/x-jsrender" id="main_content_series">
+    <li onclick="RedirectUrl('series.html?id={{:id}}')">
+        <img src="{{getImagePath:picurl}}" width="80%" style="border-radius:50%" class="imgs"/>
+        <div style="font-size:0.8em;">{{:linkurl}}</div>
+    </li>
+</script>
+<script src="../js/page/index.js"></script>

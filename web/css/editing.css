@@ -1,0 +1,176 @@
+.content .pull-right{
+    position: relative;
+    width: 860px;
+    height: 581px;
+    border: 1px solid #d8d8d8;
+}
+.content .pull-right .box .touxiang{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 70px auto 40px auto;
+    text-align: center;
+}
+.content .pull-right .box .touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.content .pull-right .box .login-top{
+    width: 575px;
+    height: 30px;
+    line-height: 30px;
+    margin: 60px auto;
+    border-bottom: 1px solid #d8d8d8;
+}
+.content .pull-right .box .login-top img{
+    margin-bottom: 3px;
+}
+.content .pull-right .box .login-top span{
+    font-size: 15px;
+}
+.content .pull-right .box .information{
+    margin-left: 260px;
+}
+.content .pull-right .box .information p{
+    margin-top: 20px;
+}
+.content .pull-right .box .information p span{
+    margin-right: 40px;
+}
+.content .pull-right .box .information p a{
+    color: #ed6d00;
+    margin-left: 65px;
+}
+.content .pull-right .box .information p input{
+    margin-left: 10px;
+}
+.content .pull-right .box .information td{
+    padding: 10px 5px;
+}
+.content .pull-right .box .information .yanzheng input{
+    margin-left: 20px;
+    width: 137px;
+    height: 25px;
+}
+.content .pull-right .box .information .yanzheng button{
+    background-color:black;
+    border-radius: 5px;
+    width: 75px;
+    font-size: 12px;
+    height: 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.content .pull-right .box .information p input~input{
+    margin-left: 20px;
+}
+.content .pull-right .box .information .text{
+    background:none;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    width: 230px;
+    height: 25px;
+    margin-left: 5px;
+    font-size: 13px;
+    padding-left:10px;
+}
+.content .pull-right .box .btn-exit{
+    text-align: center;
+    margin-top: 10px;
+}
+.content .pull-right .box .btn-exit button{
+    background-image: url("../images/personage/btn-save.png");
+    border-radius: 5px;
+    width: 178px;
+    height: 28px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.content .pull-right .box .btn-exit a{
+    width: 178px;
+    height: 28px;
+    line-height: 28px;
+    color: white;
+    background-image: url("../images/personage/btn-exit.png");
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+}
+.content .pull-right .box .btn-exit .save{
+    background-image: url("../images/personage/btn-save.png");
+}
+
+
+/*�������*/
+.content .pull-right .box .feedback{
+    width: 498px;
+    height: 246px;
+    margin: 0px auto;
+}
+.content .pull-right .box .feedback textarea{
+    background-image: url("../images/personage/shurukuang.png");
+    width: 498px;
+    height: 246px;
+    border: none;
+    padding: 10px;
+    font-size: 12px;
+    resize: none;
+}
+input[type=file],input[type=hidden]{
+    display: block;width: 100%;height: 100%;opacity: 0;
+    z-index: 4;
+    position: relative;
+    left: 0;
+    top: -100%;
+}
+.man{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/personage/danxuan2.png");
+    background-size: 100%;
+    border-radius: 50%;
+    position: absolute;
+    left: 14%;
+    top: 0;
+}
+.woman{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/personage/danxuan2.png");
+    background-size: 100%;
+    border-radius: 50%;
+    position: absolute;
+    left: 34%;
+    top: 0%;
+}
+.circleBg{
+    background: url("../images/personage/danxuan1.png") 50% 50%;
+    background-size: 100% auto;
+
+}
+.content .pull-right .box .information .yanzheng input[data-yanzheng]{
+    background-image: url('../images/personage/button_yanzhengma.png');
+    border-radius: 5px;
+    width: 88px;
+    height: 25px;
+    color: white;
+    border: none;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+.hint{
+    text-align: center;
+    height: 30px;
+    margin-top: 40px;
+    color: red;
+}

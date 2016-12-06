@@ -1,0 +1,183 @@
+html,
+body,
+div,
+span,
+a,
+p,
+input
+{
+    font-weight: normal;
+    font-family: "Microsoft YaHei";
+}
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url("../images/login/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+.logo{
+    margin-top: 130px;
+    text-align: center;
+}
+.container .register{
+    width: 365px;
+    height: 310px;
+}
+.form .step{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.step span{
+    position: relative;
+    margin-left: -10px;
+}
+.step span div{
+    position: absolute;
+    bottom: -13px;
+    left: 5px;
+}
+.step span div span{
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.step .step-2{
+    margin-left: 20px;
+}
+.register{
+    height: 300px;
+
+}
+.form{
+    width: 365px;
+    height: 280px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    position: relative;
+}
+.form .number,
+.form .password,
+.form .confirm{
+    width: 256px;
+    height: 30px;
+    background-image: url("../images/login/textbox1.png");
+    position: relative;
+}
+.form .login{
+    width: 256px;
+    font-size: 12px;
+}
+.form #note{
+    width: 310px;
+    height: 30px;
+    margin-left: 55px;
+    background-image: url("../images/login/textbox2.png");
+    background-repeat: no-repeat;
+    position: relative;
+}
+#note input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.form #note div{
+    bottom: 9px;
+    left: 61px;
+    line-height: 30px;
+}
+.form #note a{
+    position: absolute;
+    top: 5px;
+    left: 265px;
+    color:white;
+    cursor: pointer;
+}
+.form .verify{
+    width: 256px;
+    height: 30px;
+    background-image: url("../images/login/textbox2.png");
+    background-repeat: no-repeat;
+    position: relative;
+}
+.form .verify input{
+    width: 172px;
+    height: 30px;
+}
+.form .verify .button{
+    width: 78px;
+    height: 30px;
+    background-image: url("../images/login/button2.png");
+    position: absolute;
+    top: 0;
+    left: 177px;
+    border: none;
+    color: #ed6d00;
+}
+.form .submit{
+    position: absolute;
+    left: 55px;
+    bottom: 10px;
+}
+.form .submit button{
+    width: 221px;
+    height: 28px;
+    background-image: url("../images/login/button1.png");
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+.container .change .submit{
+    position: absolute;
+    left: 70px;
+    bottom: 10px;
+}
+.form div{
+    margin:11px auto;
+}
+.form .hint{
+    /*margin-top: 30px;*/
+    height: 30px;
+    text-align: center;
+    color: red;
+}
+.form div .login-input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.form div input{
+    color: white;
+    background-color:transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.form .login input{
+    width: auto;
+}
+.form .login span,
+.form .login a{
+    color: white;
+}
+::-webkit-input-placeholder {
+    color:white;
+}
+input:-moz-placeholder {
+    color:white;
+}
+.bottom{
+    text-align: center;
+    color: #333333;
+    font-size: 12px;
+    margin: 40px auto 40px auto;
+}

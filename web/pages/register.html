@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/login.css"/>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/vCode.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <!--<script src="../js/login.js"></script>-->
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img src="../images/login/logo.png">
+
+    </div>
+    <form class="form register" style="height:320px;">
+        <div class="number">
+            <input type="text" class="login-input" id="number"  placeholder="请输入手机号" maxlength="11"/>
+            <span></span>
+        </div>
+        <div class="verify" id="note">
+            <input type="text" id="code1" class="login-input" placeholder="请输入图形验证码"/>
+            <div id="vCode1" style="width:80px; height: 30px; border: 1px solid #ccc; display: inline-block;"></div>
+            <a id="btn1">换一张</a>
+        </div>
+        <div class="verify" id="note-verify">
+            <input id="yanzhengma" type="text" val=""  class="login-input"  placeholder="请输入验证码"/>
+             <input class="button" type="button" value="获取验证码"/>
+            <span></span>
+        </div>
+        <script>
+            $(document).ready(function(){
+            $(".login-input").val()=="";
+                var code1 = getCode();
+                $("#note-verify").find(".button").click(function(){
+                    //验证图形码是否正确
+                    if(!$('#number').val()){
+                        $(".hint").text('请输入手机号');
+//                       code1 = getCode();
+                        return;
+                    }
+                    if(!/^1[3-9]\d{9}$/.test($('#number').val())){
+                        $(".hint").text('手机号格式不正确');
+//                        code1 = getCode();
+                        return;
+                    }else{
+                        $(".hint").text('');
+                    }
+
+                    if(!code1.verify($('#code1').val())){
+                        $(".hint").text('图像验证码不正确');
+                        code1 = getCode();
+                        return ;
+                    }else{
+                        $(".hint").text('');
+                    }
+                    var mobile=$("#number").val()
+                    $.ajax({
+                        url: root_path + "user/sendCode",
+                        type: 'post',
+                        async: false,
+                        data:"mobile="+mobile,
+                        success: function (data) {
+                            if(data.code==0){
+                                $(".hint").text(data.message)
+                            }
+                            if(data.code==1){
+                                //设置验证码有效期
+                                var aa=new Date();
+                                aa.setTime(aa.getTime()+5*60*1000); //设置date为当前时间+30分
+                                document.cookie="key=1; expires="+aa.toGMTString(); //将date赋值给expires
+                                window.sessionStorage.setItem("dx",data.object[mobile])
+                                var btn = $("#note-verify").find(".button");
+                                var count = 60;
+                                var timer = setInterval(time, 1000);
+                                function time() {
+                                    count--;
+                                    btn.val(count + 's');
+                                    btn.css({
+                                        "backgroundImage": "url('../images/login/button3.png')",
+                                        "color": "#999"
+                                    })
+                                    if(btn.val()!=("重新获取"||"获取验证码")){
+                                        btn.attr("disabled","disabled");
+                                    }
+                                    if (count == 0) {
+                                        clearInterval(timer);
+                                        btn.val("重新获取");
+                                        btn.removeAttr("disabled","disabled");
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+            function getCode(){
+                $('#vCode1').html('');
+                var container1 = document.getElementById("vCode1");
+                var code1 = new vCode(container1);
+                return code1;
+            }
+        </script>
+        <div class="password">
+            <input type="password" class="login-input havepwd" id="password" placeholder="请输入6-18位数字或字母构成的密码" onblur="textpwd()"/>
+            <span></span>
+        </div>
+        <div class="confirm">
+            <input type="password" class="login-input havepwd" id="confirm" placeholder="请再次输入密码" />
+            <span></span>
+        </div>
+        <script>
+            $(".password").on("blur",textpwd)
+            $(".confirm").on("blur",twicepwd);
+            var reg=/[a-zA-Z0-9]{6,18}/
+            function textpwd(){
+                var pwd=$(".havepwd").val();
+                $(".hint").text("")
+                if(!reg.test(pwd)){
+                    $(".hint").text("密码强度不符，需要6-18位数字或字母构成")
+                   return;
+                }
+            }
+            function twicepwd(){
+                var aa=$("#password").val();
+                var b=$("#confirm").val();
+                $(".hint").text("")
+                if(aa==b) {
+                    textpwd();
+                }else{
+                    $(".hint").text("两次密码不一致")
+                    return false;
+                }
+            }
+            $(document).on("click","#submit",function(e){
+                e.returnValue = false;
+                e.preventDefault();
+                if($('#number').val()==""){
+                    $(".hint").text('手机不能为空');
+                    return;
+                }
+                if(!/^1[3-9]\d{9}$/.test($('#number').val())){
+                    $(".hint").text('手机号格式不正确');
+                    return;
+                }
+                if(!$("#code1").val()){
+                    $(".hint").text('请输入验证码');
+                    $(".button").removeAttr("disabled","disabled");
+                    return;
+                }
+                //判断有证码是否有效
+                var str=document.cookie;                //获取cookie字符串
+                var arr=str.split("; ");                //将多cookie切割为多个名/值对
+                var userIndex="";                        //定义一个空字符串
+                var i=0;                                //定义一个变量并赋值0
+                while(i<arr.length)                    //遍历cookie数组，处理每个cookie对
+                {
+                    var arrs=arr[i].split("=");    //用“=”将cookie的名与值分开
+                    if("key"==arrs[0])                //找到名称为user的cookie，并返回它的值
+                    {
+                        userIndex=arrs[1];            //将获取的值保存在变量userIndex中
+                        break;                        //结束循环
+                    }
+                    i++;                            //变量i加1
+                }
+                if(userIndex=="") {
+                    $(".hint").text('图文验证码已失效');
+                    return;
+                }
+
+
+                if(!$("#yanzhengma").val()){
+                    $(".hint").text('请输入短信验证码');
+                    return;
+                }
+                var reg=/[a-zA-Z0-9]{6,18}/;
+                var pwd=$(".havepwd").val();
+
+                var yanzhengma=$("#yanzhengma").val();
+                if(yanzhengma!=window.sessionStorage.getItem("dx")){
+                    $(".hint").text("短信验证码不正确")
+                    return;
+                }
+                if(!$("#password").val()){
+                    $(".hint").text('请输入密码');
+                    return;
+                }
+                if(!$("#confirm").val()){
+                    $(".hint").text('请再次输入密码');
+                    return;
+                }
+                var reg=/[a-zA-Z0-9]{6,18}/
+                var pwd=$(".havepwd").val();
+                if(!reg.test(pwd)){
+                    $(".hint").text("密码强度不符，需要6-18位数字或字母构成")
+                    return;
+                }
+                if($("#confirm").val()!=$("#password").val()){
+                    $(".hint").text("两次密码不一致")
+                    return;
+                }
+                if(reg.test(pwd)){
+                    if(yanzhengma==window.sessionStorage.getItem("dx")){
+                        var mobile=$("#number").val();
+                        var password=$("#password").val();
+                        var code=$("#yanzhengma").val();
+                        $.ajax({
+                            url: root_path + "user/register",
+                            type: 'post',
+                            async: false,
+                            data:{
+                                mobile:mobile,
+                                password:password,
+                                code:code
+                            },
+                            success: function (result) {
+                                if(result.code==1) {
+                                    var url=window.location.href;
+                                    var index=url.indexOf("pages");
+                                    var str=url.substr(0,index+6);
+                                    var Url = str+"login.html";
+                                    $(".hint").text("注册成功")
+                                    setTimeout(function(){RedirectUrl(Url)},2000)
+                                }else if(result.code==0){
+                                    $(".hint").text(result.message)
+                                }
+                            }
+                        });
+
+                    }
+                }else{
+                    $(".hint").text("密码不符合要求")
+                }
+            })
+        </script>
+        <div class="hint"></div>
+        <div class="submit">
+            <button id="submit">注册</button>
+            <div class="login">
+                <span>已有账号？</span>
+                <a href="login.html">立即登录</a>
+            </div>
+        </div>
+
+    </form>
+    <div class="bottom">
+        <div>上海栖丞室内设计工程有限公司</div>
+        <div>© 2016 xichengshejixichengsheji  All Rights Reserved</div>
+    </div>
+</div>
+</body>
+</html>

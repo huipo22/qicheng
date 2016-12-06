@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="登录" />
+    <meta name="Keywords" content="登录" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/login.js"></script>
+</head>
+
+<body>
+    <div class="layout_w">
+        <form action="#">
+        	<div class="logo">
+        		<img src="../img/login/logo.png" style="width: 6rem;">
+        	</div>
+            <div>
+            	<input type="text" placeHolder="请输入手机号" maxlength="11" />
+            </div>
+            <div>
+            	<input type="password" placeHolder="请输入密码" />
+            </div>
+            <div class="forget_link">
+            	<a href="forget.html">忘记密码?</a>
+            </div>
+        </form>
+    </div>
+    <div class="ui-btn-wrap layout_w">
+        <button class="ui-btn-lg ui-btn-danger ui-btn-bg">登录</button>
+        <div>还没有账号？<a href="register.html">立即注册</a></div>
+    </div>
+    <div class="ui-poptips ui-poptips-warn" style="display:none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+</body>
+</html>

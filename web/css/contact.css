@@ -1,0 +1,34 @@
+.content .pull-right{
+    width: 860px;
+    height: 100%;
+    /*height: 581px;*/
+    border: 1px solid #d8d8d8;
+    min-height: 581px;
+}
+.content .pull-right .box{
+    width: 622px;
+    height: 381px;
+    margin: 60px auto;
+    padding-top: 100px;
+    background-image: url("../images/platform/kuang1.png");
+}
+
+.content .pull-right .box h1{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.content .pull-right .box p{
+    font-size: 13px;
+    width: 100%;
+    float: left;
+    /*margin-left: 196px;*/
+    text-align: left;
+    margin-top: 10px;
+}
+.content .pull-right .box div{
+    margin-top: 30px;
+    width: 36%;
+    margin: 0 auto;
+}

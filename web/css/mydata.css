@@ -1,0 +1,66 @@
+
+.content .pull-right{
+    position: relative;
+    width: 860px;
+    height: 581px;
+    border: 1px solid #d8d8d8;
+}
+.content .pull-right .box .touxiang{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 70px auto 40px auto;
+    text-align: center;
+}
+.content .pull-right .box .touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.content .pull-right .box .information p{
+    margin-top: 20px;
+}
+
+.content .pull-right .box .information p span{
+    margin-right: 40px;
+}
+.content .pull-right .box .btn-exit{
+    margin: 70px auto;
+}
+.content .pull-right .box .btn-exit a{
+    border-radius: 100px;
+    width: 178px;
+    height: 28px;
+    line-height: 28px;
+    color: white;
+    margin: 0px auto;
+    background-image:url("../images/personage/btn-exit.png");
+}
+.content .pull-right .btn-editing{
+    position: absolute;
+    top: 20px;
+    left: 55px;
+}
+.content .pull-right .btn-editing a{
+    width: 71px;
+    height: 28px;
+    line-height: 28px;
+    color: white;
+    background-image: url("../images/personage/button7.png");
+}
+
+.content .pull-right a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+.content .pull-right a:hover{
+    text-decoration: none;
+}
+.content .pull-right .box .information table{
+    margin: 0px auto;
+}
+.content .pull-right .box .information td{
+    padding: 10px 15px;
+}

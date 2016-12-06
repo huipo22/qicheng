@@ -1,0 +1,207 @@
+p,
+h1{
+    padding: 0px;
+    margin: 0px;
+}
+.span{
+    color: #ed6d00;
+}
+.span2{
+    color: black;
+}
+.content{
+    width: 1050px;
+    min-height: 520px;
+}
+
+.content .screen{
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    margin-top: 20px;
+}
+.content .screen div{
+    line-height: 40px;
+}
+.content .screen div span{
+    cursor: pointer;
+}
+#village span~span{
+    cursor: pointer;
+}
+.screen #village span~span:hover{
+    color: #ed6d00;
+}
+.screen{
+    overflow: hidden;
+}
+#village{
+    float: left;
+    width:100px;
+}
+#village>span{
+    margin-left:10px;
+}
+#village-name{
+    overflow:hidden;
+    float:right;
+    width:850px;
+}
+#village-name>span{
+    display: block;
+    width:14.2%;
+    float:left;
+    height:40px;
+    overflow: hidden;
+    text-align: center;
+}
+#village-name span~span{
+    cursor: pointer;
+}
+#village-name span:hover{
+    color: #ed6d00;
+}
+.content .area{
+    padding: 20px 0;
+    border-bottom: 1px solid #d8d8d8;
+    display: none;
+}
+.content .area img{
+    width: 213px;
+    height: 157px;
+}
+.content .area .text{
+    width: 805px;
+    height: 157px;
+    padding: 0px 20px;
+}
+.content h1{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.content .area .text p{
+    font-size: 12px;
+    line-height: 25px;
+}
+.content .house ul{
+    /*width: 100%;*/
+}
+.content .house ul .listLi{
+    width: 505px;
+    height: 182px;
+}
+.content .house ul .listLi ul{
+    position: relative;
+    margin-top: 25px;
+}
+.content .house ul .listLi ul .li1  a{
+    display: block;
+}
+.content .house ul .listLi ul .li1 img{
+    width: 210px;
+    height: 154px;
+}
+.content .house ul .listLi ul .li2{
+    width: 280px;
+    height: 157px;
+    padding: 0px 20px;
+    position: absolute;
+    top: 0px;
+    left: 215px;
+}
+.content .house ul .listLi ul .li2 p{
+    font-size: 12px;
+    line-height: 25px;
+}
+.caseName{
+    font-size: 12px;
+}
+
+/*��ҳ*/
+.house-bottom{
+    text-align: center;
+    margin: 35px auto;
+}
+.house-bottom ul{
+    height: 42px;
+    line-height: 42px;
+}
+.house-bottom li{
+    margin: 5px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    float: left;
+}
+.house-bottom .first{
+    background-image: url("../images/personage/shouye.png");
+}
+.house-bottom .prev{
+    background-image: url("../images/personage/shangyiye.png");
+}
+.house-bottom .next{
+    background-image: url("../images/personage/xiayiye2.png");
+}
+.house-bottom .last{
+    background-image: url("../images/personage/weiye2.png");
+}
+.house-bottom .first:hover{
+    background-image: url("../images/personage/shouye2.png");
+}
+.house-bottom .prev:hover{
+    background-image: url("../images/personage/shangyiye2.png");
+}
+.house-bottom .next:hover{
+    background-image: url("../images/personage/xiayiye.png");
+}
+.house-bottom .last:hover{
+    background-image: url("../images/personage/weiye.png");
+}
+.house-bottom .pagination{
+    /*width: 95px;*/
+}
+.house-bottom li a{
+    margin: 10px;
+    color: #cccccc;
+}
+.house-bottom li a:hover,.house-bottom .active{
+    color: #ed6d00;
+}
+.house-bottom .disabled{
+    pointer-events: none;
+}
+.house-bottom .input-box1{
+    border: 1px solid #d8d8d8;
+}
+.house-bottom .input-box1,
+.house-bottom .input-box2{
+    width:60px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 0px;
+    position: relative;
+}
+.house-bottom .input-box2{
+    border: 1px solid #ed6d00;
+    color: #ed6d00;
+}
+.house-bottom li input{
+    position: absolute;
+    background-color:transparent;
+    border: none;
+    top: -1px;
+    left: 0px;
+    width:60px;
+    height: 32px;
+    text-align: center;
+}
+.house-bottom .input-box .button {
+    width: 60px;
+    height: 32px;
+    color: #ed6d00;
+}
+.house-bottom .clearfix{
+    width: 60%;
+    margin: auto;
+}

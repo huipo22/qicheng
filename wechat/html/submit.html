@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
+    <title>提交订单</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta name="Description" content="提交订单"/>
+    <meta name="Keywords" content="提交订单"/>
+    <meta name="author" content="zhanglin"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon"/>
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <script type="text/javascript" src="../js/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="../js/frozen.js"></script>
+    <script type="text/javascript" src="../js/template-native.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/submit.js"></script>
+</head>
+<style>
+    form div{
+        margin-left: 1em;
+    }
+    form h6{
+        color: #ED6D00;
+        line-height: 3em;
+        margin-left: 1em;
+    }
+    form .ui-form-item{
+        padding-left: 0px;
+    }
+</style>
+
+<body>
+<div class="ui-form" style="margin-top:20px;">
+    <form action="myorder.html" method="post">
+        <div class="ui-form-item ui-form-item-show ui-border-b modify_input_position">
+            <input type="text" value="" placeHolder="请输入您的姓名" class="edit_info_iput name" maxlength="20">
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-border-b modify_input_position">
+            <input type="text" value="" placeHolder="请输入您的联系方式" class="edit_info_iput Mobile" maxlength="11">
+        </div>
+        <div class="ui-form-item ui-form-item-show ui-border-b modify_input_position">
+            <input type="text" value="" placeHolder="请输入您的住址" class="edit_info_iput address">
+        </div>
+        <h6>备注：请提供真实信息，方便我们工作人员与您联系。</h6>
+        <div class="ui-btn-wrap ui-btn-position">
+            <button class="ui-btn-lg ui-btn-danger ui-btn-bg" id="submit">提交</button>
+        </div>
+    </form>
+    <div class="ui-poptips ui-poptips-warn" style="display:none;">
+        <div class="ui-poptips-cnt"></div>
+    </div>
+</div>
+</body>
+</html>

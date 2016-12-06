@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>订单详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta name="Description" content="订单详情" />
+    <meta name="Keywords" content="订单详情" />
+    <meta name="author" content="zhanglin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link type="image/x-icon" href="../../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/frozen.css">
+    <link rel="stylesheet" href="../css/commons.css">
+    <!--公共样式 start-->
+    <link rel="stylesheet" href="../css/series.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <!--公共样式 end-->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jsviews.js"></script>
+    <script type="text/javascript" src="../js/jsviews-help.js"></script>
+    <script type="text/javascript" src="../js/loadTmpl.js"></script>
+    <script type="text/javascript" src="../js/commons.js"></script>
+    <script type="text/javascript" src="../js/page/order_detail.js"></script>
+    <style>
+        .han{
+            margin-left: 1em;
+            width: 70%;
+        }
+        .tel{
+            float: right;
+            /*margin-right: 1rem;*/
+        }
+        .address{
+            margin-left: 1.9em;
+            width: 75%;
+        }
+        .step1{
+            display: inline-block;
+            margin-left: 1em;
+        }
+        .step2{
+            display: inline-block;
+            margin-left: 5.2em;
+        }
+        .juli{
+            margin-top: 1.8rem;
+            margin-bottom:0.8rem;
+        }
+        .juli1{
+            margin-top: 0.3em;
+            margin-bottom: 0.5em;
+        }
+        .bg1{
+            background: #f5f5f5;
+        }
+        .upgradeName{
+            margin-left: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<ul class="ui-list ui-list-pure" id="base"></ul>
+<ul class="ui-list bg1">
+    <li class="ui-border-t" style="padding:.5rem 0;">
+        <img style="height: 1em;margin-right: 0.5em;" src="../img/login/logo.png" alt="">
+        <div class="ui-list-info" style="padding-top: 0;padding-bottom: 0;">
+            <h4 class="ui-nowrap" style="color:#ed6d00;margin-top: 0;margin-bottom: 0;">项目清单</h4>
+        </div>
+    </li>
+</ul>
+<div style="margin-top: 1rem;background: #fff;">
+    <!-- 清单列表 -->
+    <ul id="itemsList"></ul>
+</div>
+<div class="ui-loading-block">
+    <div class="ui-loading-cnt">
+        <i class="ui-loading-bright"></i>
+        <p>正在加载中...</p>
+    </div>
+</div>
+</body>
+</html>
+<!-- 基础模板 -->
+<script type="text/x-jsrender" id="baseTmpl">
+    <li class="ui-border-b">
+        <div class="juli">
+            <label for="#">订单编号：</label>
+            <span>{{:orderNo}}</span>
+        </div>
+        <div class="juli1">
+            <div>
+            <label for="#">创建时间：</label>
+            <span>{{convertTime:createTime}}</span>
+        </div>
+    </li>
+    <li class="ui-border-b juli1">
+        <div>
+            <label for="#">联系人：</label>
+            <span class="han">{{:realName}}</span>
+        </div>
+        <div>
+            <label for="#">手机号：</label>
+            <span class="han">{{:mobile}}</span>
+        </div>
+        <div class="juli1">
+            <label for="#">地址：</label>
+            <span class="address">{{:address}}</span>
+        </div>
+    </li>
+    <li>
+        <div>
+            <label for="#">产品系列：</label>
+            <span>{{if productSeriesVo}}{{:productSeriesVo.seriesName}}{{/if}}</span>
+        </div>
+        <div>
+            <div class="juli1 clearfix">
+            <div class="pull-left">
+                <label for="#">升级包：</label>
+            </div>
+                <ul class="pull-left upgradeName">
+                    {{for scencelist}}
+                        {{for materialItemsList}}
+                            {{if upgradeVo}}
+                                <li>{{:upgradeVo.upgradeName}}升级包-{{:itemName}}</li>
+                            {{/if}}
+                        {{/for}}
+                    {{/for}}
+                </ul>
+            </div>
+            <div class="juli1 clearfix">
+                    <label for="">面积：</label>
+                <span class="address">{{:area}} m<sup>2</sup></span>
+
+            </div>
+            <div class="juli1">
+                <label for="">单价：</label>
+                <span class="address">{{if productSeriesVo}}{{:productSeriesVo.price/100}}{{/if}}元/平方</span>
+            </div>
+            <div>
+                <label for="">参考价格：</label>
+                <span style="color: #F91515">¥{{:prices}}</span>
+            </div>
+        </div>
+    </li>
+</script>
+<!-- 清单列表模板 -->
+<script type="text/x-jsrender" id="itemsListTmpl">
+    <li style="{{if materialItemsList && materialItemsList.length <= 0}}display: none;{{/if}}{{if #index == 0}}padding-top: 1rem;{{/if}}">
+        <div class="title">
+            <b></b><p>{{:sceneName}}</p>
+        </div>
+        <ul id="upgradeItemsList{{:id}}">
+            {{for materialItemsList}}
+                {{if upgradeVo}}
+                    <li data-id="{{:id}}">
+                        <div class="exp">
+                            <h4>{{:upgradeVo.upgradeName}}升级包</h4>
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" alt="" style="width: 14rem;height: 11rem;" />
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-unstyled">
+                                        <li>名称：{{:itemName}}</li>
+                                        <li>品牌：{{:brand}}</li>
+                                        <li>型号：{{:modelType}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="border_bottom_dished">描述：{{:itemDesc}}</p>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/for}}
+        </ul>
+        <ul id="maItemsList{{:id}}" style="margin-top: 1rem;">
+            {{for materialItemsList}}
+                {{if !upgradeVo}}
+                    <li>
+                        <div class="yiban">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img src="{{if imgurl}}{{getImagePath:imgurl}}{{/if}}" alt="" style="width: 14rem;height: 11rem;" />
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <ul class="list-unstyled">
+                                        <li>名称：{{:itemName}}</li>
+                                        <li>品牌：{{:brand}}</li>
+                                        <li>型号：{{:modelType}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>描述：{{:itemDesc}}</p>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/for}}
+        </ul>
+    </li>
+</script>
